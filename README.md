@@ -4,7 +4,7 @@ Este projeto é um agente conversacional baseado no [Google ADK](https://github.
 
 ## 🎯 Visão Geral
 
-O agente se comunica com servidores MCP expostos em diferentes portas. Cada ferramenta MCP é servida por um contêiner próprio (ex: `mcp-filesystem`, `mcp-greeter`). Todas as ferramentas são acessadas via `MCPToolRegistry` por meio de endpoints definidos em `config_sse_tools.yaml`.
+O agente se comunica com servidores MCP expostos em diferentes portas. Cada ferramenta MCP é servida por um contêiner próprio (ex: `mcp-filesystem`, `mcp-greeter`). Todas as ferramentas são acessadas por meio de endpoints definidos em `config_sse_tools.yaml`.
 
 ## 📁 Estrutura do Projeto
 
