@@ -1,0 +1,38 @@
+services:
+
+  agente:
+    build: .
+    container_name: agente
+    env_file:
+      - .env
+    volumes:
+      - ./tools:/app/tools
+    depends_on:
+      - mcp-filesystem
+      - mcp-greeter
+    stdin_open: true
+    tty: true
+
+  mcp-filesystem:
+    image: node:22
+    container_name: mcp-filesystem
+    working_dir: /mcp
+    volumes:
+      - ./data:/mcp
+    ports:
+      - "3000:3000"
+    command: >
+      npx -y supergateway
+      --stdio "npx -y @modelcontextprotocol/server-filesystem ./"
+      --port 3000
+      --baseUrl http://0.0.0.0:3000
+      --ssePath /sse
+      --messagePath /messages
+    
+  mcp-greeter:
+    build:
+      context: ./tools/mcp-greeter
+    container_name: mcp-greeter
+    env_file: ./tools/mcp-greeter/.env
+    ports:
+      - "3001:3000"

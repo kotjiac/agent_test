@@ -1,0 +1,5 @@
+google-adk
+google-adk[cli]
+python-dotenv
+litellm
+pyyaml

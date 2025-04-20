@@ -1,0 +1,5 @@
+tools:
+  - id: filesystem
+    url: http://mcp-filesystem:3000/sse
+  - id: greeter
+    url: http://mcp-greeter:3000/mcp
