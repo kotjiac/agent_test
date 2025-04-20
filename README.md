@@ -63,18 +63,6 @@ AGENT_INSTRUCTION=Você é um assistente técnico direto e confiável.
 AGENT_USER_ID=usuario123
 ```
 
-### `config_sse_tools.yaml` – Ferramentas HTTP/SSE disponíveis
-
-```yaml
-tools:
-  - id: filesystem
-    url: http://mcp-filesystem:3000
-  - id: greeter
-    url: http://mcp-greeter:3001
-```
-
-O agente irá buscar automaticamente os endpoints `/tools` para descobrir as ferramentas disponíveis e usá-las conforme necessário.
-
 ---
 
 ## 🛰️ MCP Servers no `docker-compose.yml`
